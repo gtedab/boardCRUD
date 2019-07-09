@@ -5,8 +5,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>boardView</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
 <body>
+<div class="container">
 <h1>BOARD VIEW</h1>
 <%
     if(request.getParameter("boardNo") == null) {
@@ -29,20 +34,33 @@
             resultSet = statement.executeQuery();
             if(resultSet.next()) {
 %>
-                <div>board_no :</div>
-                <div><%=boardNo%></div>
-                <div>board_title :</div>
-                <div><%=resultSet.getString("board_title")%></div>
-                <div>board_content :</div>
-                <div><%=resultSet.getString("board_content")%></div>
-                <div>board_user :</div>
-                <div><%=resultSet.getString("board_user")%></div>
-                <div>board_date :</div>
-                <div><%=resultSet.getString("board_date")%></div>
-                <div>
-                    <a href="<%=request.getContextPath()%>/jsp_board/boardModifyForm.jsp?boardNo=<%=boardNo%>">수정</a>
-                    <a href="<%=request.getContextPath()%>/jsp_board/boardRemoveForm.jsp?boardNo=<%=boardNo%>">삭제</a>         
-                </div>
+				<table class="table table-dark table-hover">
+					<tbody>
+						<tr>
+                			<td>board_no :</td>
+                			<td><%=boardNo%></td>
+                		</tr>
+                		<tr>
+                			<td>board_title :</td>
+                			<td><%=resultSet.getString("board_title")%></td>
+                		</tr>
+                		<tr>
+                			<td>board_content :</td>
+                			<td><%=resultSet.getString("board_content")%></td>
+                		</tr>
+                		<tr>
+                			<td>board_user :</td>
+                			<td><%=resultSet.getString("board_user")%></td>
+                		</tr>
+                		<tr>
+                			<td>board_date :</td>
+                			<td><%=resultSet.getString("board_date")%></td>
+                		</tr>
+                	</tbody>
+                </table>
+                    <a class="btn btn-dark" href="<%=request.getContextPath()%>/jsp_board/boardModifyForm.jsp?boardNo=<%=boardNo%>">수정</a>
+                    <a class="btn btn-dark" href="<%=request.getContextPath()%>/jsp_board/boardRemoveForm.jsp?boardNo=<%=boardNo%>">삭제</a>
+                    <a class="btn btn-dark" href="<%=request.getContextPath()%>/jsp_board/boardList.jsp">목록</a>                        
 <%          }
         } catch(Exception e) {
             e.printStackTrace();
@@ -54,6 +72,7 @@
         }
     }
 %>
+</div>
 </body>
 </html>
 

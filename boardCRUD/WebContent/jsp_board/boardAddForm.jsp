@@ -4,23 +4,38 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>BOARD ADD</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-<h1>BOARD ADD</h1>
-<form action="<%=request.getContextPath()%>/jsp_board/boardAddAction.jsp" method="post">
-    <div>boardPw : </div>
-    <div><input name="boardPw" id="boardPw" type="password"/></div>
-    <div>boardTitle : </div>
-    <div><input name="boardTitle" id="boardTitle" type="text"/></div>
-    <div>boardContent : </div>
-    <div><textarea name="boardContent" id="boardContent" rows="5" cols="50"></textarea></div>
-    <div>boardName : </div>
-    <div><input name="boardUser" id="boardUser" type="text"/></div>
+<div class="container">
+	<h1>BOARD ADD</h1>
+	<form id="addForm" action="<%=request.getContextPath()%>/jsp_board/boardAddAction.jsp" method="post">
+    	<div class="form-group">
+    		<label for="boardPw">boardPw :</label>>
+    		<input class="form-control" name="boardPw" id="boardPw" type="password"/>
+    	</div>
+    	<div class="form-group">
+            <label for="boardPw">boardTitle :</label>
+            <input class="form-control" name="boardTitle" id="boardTitle" type="text"/>
+        </div>
+        <div class="form-group">
+            <label for="boardContent">boardContent :</label>
+            <textarea class="form-control" name="boardContent" id="boardContent" rows="5" cols="20"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="boardName">boardName :</label>
+            <input class="form-control" name="boardUser" id="boardUser" type="text"/>
+        </div>
     <div>
-        <input type="submit" value="글입력"/>
-        <input type="reset" value="초기화"/>
+        <input class="btn btn-dark" id="addButton" type="button" value="글입력"/>
+        <input class="btn btn-dark" type="reset" value="초기화"/>
+        <a class="btn btn-dark" href="<%=request.getContextPath()%>/jsp_board/boardList.jsp">목록</a>
     </div>
 </form>
+</div>
 </body>
 </html>
 
