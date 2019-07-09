@@ -12,7 +12,7 @@
 <script>
     $(document).ready(function(){
         $('#modifyButton').click(function(){
-            if($('#boardPw').val().length <4) {
+            if($('#boardPw').val().length <6) {
                 alert('boardPw는 6자이상 입력하세요');
                 $('#boardPw').focus();
             } else if($('#boardTitle').val()=='') {
