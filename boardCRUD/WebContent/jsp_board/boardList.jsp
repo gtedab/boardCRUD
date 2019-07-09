@@ -5,8 +5,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>BOARD LIST</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
 <body>
+<div class="container">
 <h1>BOARD LIST</h1>
 <%
     // boardList.jsp페이지에는 currentPage라는 매개변수가 넘어와야 하는데
@@ -46,7 +51,7 @@
     listStatement.setInt(2, pagePerRow); 
     listResultSet = listStatement.executeQuery();
 %>
-    <table border="1">
+    <table class="table table-dark table-hover">
         <thead>
             <tr>
                 <th>boardTitle</th>
@@ -107,6 +112,7 @@
         try {connection.close();} catch(Exception e){}
     }
 %>
+</div>
 </body>
 </html>
 
