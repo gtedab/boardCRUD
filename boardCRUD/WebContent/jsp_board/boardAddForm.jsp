@@ -8,6 +8,27 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $('#addButton').click(function(){
+            if($('#boardPw').val().length <6) {
+                alert('boardPw는 6자이상 입력하세요');
+                $('#boardPw').focus();
+            } else if($('#boardTitle').val()=='') {
+                alert('boardTitle을 입력하세요');
+                $('#boardTitle').focus();
+            } else if($('#boardContent').val()=='') {
+                alert('boardContent을 입력하세요');
+                $('#boardContent').focus();
+            } else if($('#boardUser').val()=='') {
+                alert('boardUser을 입력하세요');
+                $('#boardUser').focus();
+            } else {
+                $('#addForm').submit();
+            }
+        });
+    });
+</script>
 </head>
 <body>
 <div class="container">
