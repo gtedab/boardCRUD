@@ -74,7 +74,7 @@
         </tbody>
     </table>
     <div>
-        <a href="<%=request.getContextPath()%>/jsp_board/boardAddForm.jsp">게시글 입력</a>
+        <a class="btn btn-dark" href="<%=request.getContextPath()%>/jsp_board/boardAddForm.jsp">게시글 입력</a>
     </div>
 <%
     // 마지막 페이지는 전체글의수를 pagePerRow로 나누었을때 나누어 떨어지면 몫이 마지막 페이지 
@@ -90,12 +90,12 @@
 <%
         if(currentPage>1) { // 현재 페이지가 1페이지보다 크면 이전페이지 링크를 추가
 %>
-            <a href="<%=request.getContextPath()%>/jsp_board/boardList.jsp?currentPage=<%=currentPage-1%>">이전</a>
+            <a class="btn btn-dark" href="<%=request.getContextPath()%>/jsp_board/boardList.jsp?currentPage=<%=currentPage-1%>">이전</a>
 <%
         }
         if(currentPage < lastPage) { // 현재 페이지가 마지막 페이지보다 작으면 다음페이지 링크를 추가
 %>
-            <a href="<%=request.getContextPath()%>/jsp_board/boardList.jsp?currentPage=<%=currentPage+1%>">다음</a>
+            <a class="btn btn-dark" href="<%=request.getContextPath()%>/jsp_board/boardList.jsp?currentPage=<%=currentPage+1%>">다음</a>
 <%
         }
 %>
